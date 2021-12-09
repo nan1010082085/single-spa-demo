@@ -11,6 +11,10 @@ const config: UserConfig = {
       '@': 'src'
     }
   },
+  build: {
+    outDir: '../dist/main',
+    assetsDir: 'src/'
+  },
   plugins: [vue(), vueJsx()]
 };
 

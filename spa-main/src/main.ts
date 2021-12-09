@@ -8,7 +8,7 @@ const router = createRouter({
   routes: [
     {
       name: 'app1',
-      path: '/app1',
+      path: '/app1/*',
       component: () => import('./components/main')
     }
   ]
