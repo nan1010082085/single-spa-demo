@@ -4,9 +4,21 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 
 const config: UserConfig = {
   server: {
+    base: 'http://localhost:3001',
     port: 3001
   },
-  base: 'http://localhost:3001',
+  build: {
+    outDir: '../dist/main/micro/app1',
+    assetsDir: 'src/',
+    manifest: true,
+    // rollupOptions: {
+    //   // input: 'index.html',
+    //   output: {
+    //     name: './src/main.js',
+    //     format: 'umd',
+    //   },
+    // }
+  },
   plugins: [
     vue({
       template: {
@@ -20,10 +32,10 @@ const config: UserConfig = {
 };
 // https://vitejs.dev/config/
 export default {
-  rollupOptions: {
-    input: 'src/main.ts',
-    format: 'system',
-    preserveEntrySignatures: true
-  },
+  // rollupOptions: {
+  //   input: 'src/main.ts',
+  //   format: 'system',
+  //   preserveEntrySignatures: true
+  // },
   ...defineConfig(config)
 };
