@@ -1,6 +1,9 @@
 import { defineConfig, UserConfig } from 'vite';
+import path from 'path';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import packageJson from './package.json';
+const name = packageJson.name;
 
 const config: UserConfig = {
   server: {
@@ -8,24 +11,28 @@ const config: UserConfig = {
     port: 3001
   },
   build: {
-    outDir: '../dist/main/micro/app1',
-    assetsDir: 'src/',
-    manifest: true,
+    outDir: `../dist/template`,
+    lib: {
+      name: `${name}-[name]`,
+      entry: path.resolve(__dirname, 'src/main.ts'),
+      formats: ['system', 'amd', 'umd'],
+    },
     // rollupOptions: {
-    //   // input: 'index.html',
+    //   external: ['vue'],
     //   output: {
-    //     name: './src/main.js',
-    //     format: 'umd',
-    //   },
+    //     globals: {
+    //       vue: 'Vue'
+    //     }
+    //   }
     // }
   },
   plugins: [
     vue({
-      template: {
-        transformAssetUrls: {
-          base: '/src'
-        }
-      }
+      // template: {
+      //   transformAssetUrls: {
+      //     base: '/src'
+      //   }
+      // }
     }),
     vueJsx()
   ]
@@ -37,5 +44,5 @@ export default {
   //   format: 'system',
   //   preserveEntrySignatures: true
   // },
-  ...defineConfig(config)
+...defineConfig(config)
 };

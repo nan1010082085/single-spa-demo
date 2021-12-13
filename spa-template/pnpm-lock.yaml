@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.12
   '@vitejs/plugin-vue': ^1.9.3
   '@vitejs/plugin-vue-jsx': ^1.3.0
   browser-log-color: ^0.0.17
@@ -15,6 +16,7 @@ dependencies:
   vue: 3.2.23
 
 devDependencies:
+  '@types/node': 16.11.12
   '@vitejs/plugin-vue': 1.10.1_vite@2.6.14
   '@vitejs/plugin-vue-jsx': 1.3.0
   browser-log-color: 0.0.17
@@ -330,6 +332,10 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
+    dev: true
+
+  /@types/node/16.11.12:
+    resolution: {integrity: sha512-+2Iggwg7PxoO5Kyhvsq9VarmPbIelXP070HMImEpbtGCoyWNINQj4wzjbQCXzdHTRXnqufutJb5KAURZANNBAw==}
     dev: true
 
   /@vitejs/plugin-vue-jsx/1.3.0:

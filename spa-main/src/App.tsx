@@ -1,15 +1,18 @@
 import { defineComponent } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
   name: 'App',
   setup() {
+    const router = useRouter();
+
     return () => {
       return (
         <div id='app'>
           spa-main-app.tsx
           <div>
-            <router-link to='/'> [ back ]</router-link>
-            <router-link to='/app1'> [ app1 ]</router-link>
+            <button onClick={() => router.push('/')}>app</button>
+            <button onClick={() => router.push({ path: '/spa-template' })}>micro apps</button>
           </div>
           <router-view />
         </div>

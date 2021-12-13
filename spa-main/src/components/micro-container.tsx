@@ -1,10 +1,10 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'main',
+  name: 'MicroContainer',
   setup() {
     return () => {
-      return <div id='main-template'>
+      return <div id='micro-container'>
         spa-main-component/main router-view
         <router-view />
       </div>;

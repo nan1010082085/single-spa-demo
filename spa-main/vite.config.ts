@@ -12,7 +12,7 @@ const config: UserConfig = {
     }
   },
   build: {
-    outDir: '../dist/main',
+    outDir: '../dist',
     assetsDir: 'src/'
   },
   plugins: [vue(), vueJsx()]
